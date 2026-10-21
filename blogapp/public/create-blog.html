@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Write and publish a new BlogApp post." />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Write a post | BlogApp</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="create" class="guard">
+  <header id="navbar"></header>
+  <main id="main" class="container" tabindex="-1">
+    <noscript><p class="notice">BlogApp needs JavaScript to work. Please enable it in your browser.</p></noscript>
+    <div class="card form-card wide">
+      <h1 id="pageTitle">Write a new post</h1>
+      <p class="subtitle" id="pageSubtitle">Give it a title, pick a category and start writing.</p>
+      <form id="blogForm" novalidate>
+        <label for="title">Title</label>
+        <input id="title" name="title" type="text" maxlength="150" placeholder="An interesting title" required />
+        <label for="category">Category</label>
+        <select id="category" name="category">
+          <option>General</option><option>HTML</option><option>CSS</option>
+          <option>JavaScript</option><option>Career</option><option>Lifestyle</option>
+        </select>
+        <label for="content">Content</label>
+        <textarea id="content" name="content" placeholder="Start writing…" required></textarea>
+        <div class="char-count" id="charCount" aria-live="polite">0 words</div>
+        <div class="field-error" id="formError" role="alert"></div>
+        <div class="form-actions">
+          <button class="btn" id="submitBtn" type="submit">Publish</button>
+          <a class="btn btn-outline" href="dashboard.html">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </main>
+  <footer id="footer"></footer>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A community blog about HTML, CSS, JavaScript, careers and everyday life. Read the latest posts or register to publish your own." />
+  <meta name="theme-color" content="#ffffff" />
+  <title>BlogApp – Read and write blog posts</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="home">
+  <header id="navbar"></header>
+  <main id="main" class="container" tabindex="-1">
+    <noscript><p class="notice">BlogApp needs JavaScript to work. Please enable it in your browser.</p></noscript>
+    <section class="intro">
+      <h1>Read what the community is writing</h1>
+      <p>Posts on HTML, CSS, JavaScript, careers and everyday life. Register to publish your own.</p>
+      <div class="btn-row">
+        <a class="btn" id="heroCta" href="register.html">Start writing</a>
+        <a class="btn btn-outline" href="#feed">Browse posts</a>
+      </div>
+    </section>
+
+    <section id="feed" aria-labelledby="feedTitle">
+      <h2 id="feedTitle" class="sr-only">Latest posts</h2>
+      <div class="chips" id="chips" role="group" aria-label="Filter by category"></div>
+      <div class="filter-bar">
+        <input type="search" id="search" placeholder="Search by title or content" aria-label="Search posts" autocomplete="off" />
+        <select id="sort" aria-label="Sort posts">
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+          <option value="title">Title A–Z</option>
+        </select>
+      </div>
+      <div class="results-info" id="resultsInfo" aria-live="polite"></div>
+      <div class="post-grid" id="blogGrid"></div>
+      <nav class="pagination" id="pagination" aria-label="Pagination"></nav>
+    </section>
+  </main>
+  <footer id="footer"></footer>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

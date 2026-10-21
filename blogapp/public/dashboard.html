@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Manage your BlogApp posts." />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Dashboard | BlogApp</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="dashboard" class="guard">
+  <header id="navbar"></header>
+  <main id="main" class="container" tabindex="-1">
+    <noscript><p class="notice">BlogApp needs JavaScript to work. Please enable it in your browser.</p></noscript>
+    <div class="card dash-profile" id="dashProfile"></div>
+    <div class="page-head">
+      <div><h1 id="welcome">Dashboard</h1><p class="subtitle">An overview of your writing.</p></div>
+      <a class="btn" href="create-blog.html">New post</a>
+    </div>
+    <section class="stats" aria-label="Your statistics">
+      <div class="stat"><div class="num" id="statPosts">0</div><div class="label">Posts</div></div>
+      <div class="stat"><div class="num" id="statWords">0</div><div class="label">Words written</div></div>
+      <div class="stat"><div class="num" id="statLatest">–</div><div class="label">Latest post</div></div>
+    </section>
+    <h2 class="section-title">Your posts</h2>
+    <div class="filter-bar">
+      <input type="search" id="dSearch" placeholder="Search your posts" aria-label="Search your posts" autocomplete="off" />
+      <select id="dCategory" aria-label="Filter by category"><option value="">All categories</option></select>
+      <select id="dSort" aria-label="Sort posts">
+        <option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="title">Title A–Z</option>
+      </select>
+    </div>
+    <div class="post-list" id="myPosts" aria-live="polite"></div>
+  </main>
+  <footer id="footer"></footer>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

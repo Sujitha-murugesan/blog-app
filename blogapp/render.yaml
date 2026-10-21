@@ -1,0 +1,22 @@
+# Render Blueprint – one-click deploy:  Render dashboard → New → Blueprint → select this repo.
+# Docs: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: blogapp
+    runtime: node
+    plan: free
+    buildCommand: npm install --omit=dev
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_EXPIRES_DAYS
+        value: "7"
+      # Render generates a strong random value for you on first deploy
+      - key: JWT_SECRET
+        generateValue: true
+      # Paste your MongoDB Atlas connection string in the Render dashboard (never commit it)
+      - key: MONGODB_URI
+        sync: false
